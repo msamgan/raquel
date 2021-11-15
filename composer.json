@@ -1,0 +1,28 @@
+{
+    "name": "msamgan/raquel",
+    "description": "laravel package to handle Raw MySQL Queries and stored procedure like a charm",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Msamgan\\Raquel\\": "src/"
+        },
+        "files": [
+            "helpers/methods.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Mohd Samgan Khan",
+            "email": "mohdsamgankhan@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Msamgan\\Raquel\\RaquelServiceProvider"
+            ]
+        }
+    }
+}
