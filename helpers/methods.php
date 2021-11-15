@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
+
 if (!function_exists('getQuery')) {
     /**
      * @param $queryName
@@ -8,7 +10,7 @@ if (!function_exists('getQuery')) {
      */
     function getQuery($queryName, $data = null)
     {
-        $query = file_get_contents(storage_path('queries/' . $queryName . '.sql'));
+        $query = file_get_contents(storage_path('app/queries/' . $queryName . '.sql'));
 
         if ($data) {
             foreach ($data as $key => $value) {
@@ -17,5 +19,17 @@ if (!function_exists('getQuery')) {
         }
 
         return $query;
+    }
+}
+
+if (!function_exists('getQueryData')) {
+    /**
+     * @param $queryName
+     * @param null $data
+     * @return array
+     */
+    function getQueryData($queryName, $data = null): array
+    {
+        return DB::select(getQuery($queryName, $data));
     }
 }
