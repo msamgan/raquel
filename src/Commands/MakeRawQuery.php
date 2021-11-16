@@ -4,7 +4,6 @@ namespace Msamgan\Raquel\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 use Symfony\Component\Console\Command\Command as CommandAlias;
 
 class MakeRawQuery extends Command
@@ -49,7 +48,7 @@ class MakeRawQuery extends Command
 
         $fileDistribution = explode('/', $this->argument('queryName'));
         $lastCount = (count($fileDistribution) - 1);
-        $fileDistribution[$lastCount] = Str::snake($fileDistribution[$lastCount], '.') . '.sql';
+        $fileDistribution[$lastCount] = $fileDistribution[$lastCount] . '.sql';
 
         $fileName = implode('/', $fileDistribution);
 
