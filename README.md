@@ -28,8 +28,13 @@ getQueryData('QueryFileName', ['param1' => 'value', 'param2' => 'value'])
 
 ### Example
 
-let the Query be like **storage/app/queries/AdminUsers.sql**
+```injectablephp
+php artisan make:query AdminUsers
+```
 
+the above command will add query to **storage/app/queries/AdminUsers.sql**
+
+update the query file as per your requirements, say
 ```sql
 select user.id, user.name where user.admin_id = adminId
 ```
