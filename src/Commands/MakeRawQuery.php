@@ -20,7 +20,7 @@ class MakeRawQuery extends Command
      *
      * @var string
      */
-    protected $description = 'Make a new raw query';
+    protected $description = 'Create a new raw query file';
 
     /**
      * @var string
